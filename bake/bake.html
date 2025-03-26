@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>Мой дом</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <h1 class="top-header">
+              <a href="../index.html" class="header__logo">
+                <span>Мой</span> Дом
+              </a>
+            </h1>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <div class="page-inner">
+            <div class="page-wrapper">
+              <div class="title-page">Котельная</div>
+              <div class="block-1">
+                <div class="time">
+                  <span class="blueText" id="timeBake"></span>
+                  время
+                </div>
+                <div class="temp">
+                  <div class="blueText">
+                    <span id="temperatureBake"></span> °C
+                  </div>
+
+                  температура<br />уличная
+                </div>
+                <div class="dav">
+                  <span class="blueText" id="boilerBar">1,5</span>
+                  давление(бар)
+                </div>
+              </div>
+              <div class="list-mods" id="list-mods">
+                <div class="block-module module-1" id="module-data-1">
+                  <div class="title__container">
+                    <div class="title" id="title-module-1">Батареи</div>
+                    <div class="card__item boiler">
+                      <button
+                        onclick="GetCheck(event)"
+                        id="batteryPump"
+                        onclick=""
+                        class="switch"
+                      ></button>
+                      <div class="card__item-text text-btn">Насос</div>
+                    </div>
+                  </div>
+                  <div class="boiler__content">
+                    <div class="values">
+                      <div class="temp">
+                        <div class="val-title">температура<br />комнатная</div>
+                        <div class="val">
+                          <select
+                            id="batteryRoomTempSelect"
+                            onchange="changeSelect(event)"
+                          >
+                            <option value="10">10 °C</option>
+                            <option value="11">11 °C</option>
+                            <option value="12">12 °C</option>
+                            <option value="13">13 °C</option>
+                            <option value="14">14 °C</option>
+                            <option value="15">15 °C</option>
+                            <option value="16">16 °C</option>
+                            <option value="17">17 °C</option>
+                            <option value="18">18 °C</option>
+                            <option value="19">19 °C</option>
+                            <option value="20">20 °C</option>
+                            <option value="21">21 °C</option>
+                            <option value="22">22 °C</option>
+                            <option value="23">23 °C</option>
+                            <option value="24">24 °C</option>
+                            <option value="25">25 °C</option>
+                            <option value="26">26 °C</option>
+                            <option value="27">27 °C</option>
+                            <option value="28">28 °C</option>
+                            <option value="29">29 °C</option>
+                            <option value="30">30 °C</option>
+                            <option value="31">31 °C</option>
+                            <option value="32">32 °C</option>
+                            <option value="33">33 °C</option>
+                            <option value="34">34 °C</option>
+                            <option value="35">35 °C</option>
+                            <option value="36">36 °C</option>
+                            <option value="37">37 °C</option>
+                            <option value="38">38 °C</option>
+                            <option value="39">39 °C</option>
+                            <option value="40">40 °C</option>
+                            <option value="41">41 °C</option>
+                            <option value="42">42 °C</option>
+                            <option value="43">43 °C</option>
+                            <option value="44">44 °C</option>
+                            <option value="45">45 °C</option>
+                            <option value="46">46 °C</option>
+                            <option value="47">47 °C</option>
+                            <option value="48">48 °C</option>
+                            <option value="49">49 °C</option>
+                            <option value="50">50 °C</option>
+                            <option value="51">51 °C</option>
+                            <option value="52">52 °C</option>
+                            <option value="53">53 °C</option>
+                            <option value="54">54 °C</option>
+                            <option value="55">55 °C</option>
+                            <option value="56">56 °C</option>
+                            <option value="57">57 °C</option>
+                            <option value="58">58 °C</option>
+                            <option value="59">59 °C</option>
+                            <option value="60">60 °C</option>
+                            <option value="60">60 °C</option>
+                            <option value="61">61 °C</option>
+                            <option value="62">62 °C</option>
+                            <option value="63">63 °C</option>
+                            <option value="64">64 °C</option>
+                            <option value="65">65 °C</option>
+                            <option value="66">66 °C</option>
+                            <option value="67">67 °C</option>
+                            <option value="68">68 °C</option>
+                            <option value="69">69 °C</option>
+                            <option value="70">70 °C</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="koef">
+                        <div class="val-title">коэффициент<br />кривой</div>
+                        <div class="val">
+                          <select
+                            id="batteryCoefSelect"
+                            onchange="changeSelect(event)"
+                          >
+                            <option value="0.0">0.0</option>
+                            <option value="0.1">0.1</option>
+                            <option value="0.2">0.2</option>
+                            <option value="0.3">0.3</option>
+                            <option value="0.4">0.4</option>
+                            <option value="0.5">0.5</option>
+                            <option value="0.6">0.6</option>
+                            <option value="0.7">0.7</option>
+                            <option value="0.8">0.8</option>
+                            <option value="0.9">0.9</option>
+                            <option value="1.0">1.0</option>
+                            <option value="1.1">1.1</option>
+                            <option value="1.2">1.2</option>
+                            <option value="1.3">1.3</option>
+                            <option value="1.4">1.4</option>
+                            <option value="1.5">1.5</option>
+                            <option value="1.6">1.6</option>
+                            <option value="1.7">1.7</option>
+                            <option value="1.8">1.8</option>
+                            <option value="1.9">1.9</option>
+                            <option value="2.0">2.0</option>
+                            <option value="2.1">2.1</option>
+                            <option value="2.2">2.2</option>
+                            <option value="2.3">2.3</option>
+                            <option value="2.4">2.4</option>
+                            <option value="2.5">2.5</option>
+                            <option value="2.6">2.6</option>
+                            <option value="2.7">2.7</option>
+                            <option value="2.8">2.8</option>
+                            <option value="2.9">2.9</option>
+                            <option value="3.0">3.0</option>
+                            <option value="3.1">3.1</option>
+                            <option value="3.2">3.2</option>
+                            <option value="3.3">3.3</option>
+                            <option value="3.4">3.4</option>
+                            <option value="3.5">3.5</option>
+                            <option value="3.6">3.6</option>
+                            <option value="3.7">3.7</option>
+                            <option value="3.8">3.8</option>
+                            <option value="3.9">3.9</option>
+                            <option value="4.0">4.0</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="temp-cont">
+                        <div class="val-title">температура<br />контура</div>
+                        <div class="temp-val">
+                          <span id="temperatureBatteryContor"></span> °C
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="block-module module-1" id="module-data-1">
+                  <div class="title__container">
+                    <div class="title" id="title-module-1">Теплый пол</div>
+                    <div class="card__item boiler">
+                      <button
+                        onclick="GetCheck(event)"
+                        id="floorPump"
+                        onclick=""
+                        class="switch"
+                      ></button>
+                      <div class="card__item-text text-btn">Насос</div>
+                    </div>
+                  </div>
+                  <div class="boiler__content">
+                    <div class="values">
+                      <div class="temp">
+                        <div class="val-title">температура<br />комнатная</div>
+                        <div class="val">
+                          <select
+                            id="floorRoomTempSelect"
+                            onchange="changeSelect(event)"
+                          >
+                            <option value="10">10 °C</option>
+                            <option value="11">11 °C</option>
+                            <option value="12">12 °C</option>
+                            <option value="13">13 °C</option>
+                            <option value="14">14 °C</option>
+                            <option value="15">15 °C</option>
+                            <option value="16">16 °C</option>
+                            <option value="17">17 °C</option>
+                            <option value="18">18 °C</option>
+                            <option value="19">19 °C</option>
+                            <option value="20">20 °C</option>
+                            <option value="21">21 °C</option>
+                            <option value="22">22 °C</option>
+                            <option value="23">23 °C</option>
+                            <option value="24">24 °C</option>
+                            <option value="25">25 °C</option>
+                            <option value="26">26 °C</option>
+                            <option value="27">27 °C</option>
+                            <option value="28">28 °C</option>
+                            <option value="29">29 °C</option>
+                            <option value="30">30 °C</option>
+                            <option value="31">31 °C</option>
+                            <option value="32">32 °C</option>
+                            <option value="33">33 °C</option>
+                            <option value="34">34 °C</option>
+                            <option value="35">35 °C</option>
+                            <option value="36">36 °C</option>
+                            <option value="37">37 °C</option>
+                            <option value="38">38 °C</option>
+                            <option value="39">39 °C</option>
+                            <option value="40">40 °C</option>
+                            <option value="41">41 °C</option>
+                            <option value="42">42 °C</option>
+                            <option value="43">43 °C</option>
+                            <option value="44">44 °C</option>
+                            <option value="45">45 °C</option>
+                            <option value="46">46 °C</option>
+                            <option value="47">47 °C</option>
+                            <option value="48">48 °C</option>
+                            <option value="49">49 °C</option>
+                            <option value="50">50 °C</option>
+                            <option value="51">51 °C</option>
+                            <option value="52">52 °C</option>
+                            <option value="53">53 °C</option>
+                            <option value="54">54 °C</option>
+                            <option value="55">55 °C</option>
+                            <option value="56">56 °C</option>
+                            <option value="57">57 °C</option>
+                            <option value="58">58 °C</option>
+                            <option value="59">59 °C</option>
+                            <option value="60">60 °C</option>
+                            <option value="60">60 °C</option>
+                            <option value="61">61 °C</option>
+                            <option value="62">62 °C</option>
+                            <option value="63">63 °C</option>
+                            <option value="64">64 °C</option>
+                            <option value="65">65 °C</option>
+                            <option value="66">66 °C</option>
+                            <option value="67">67 °C</option>
+                            <option value="68">68 °C</option>
+                            <option value="69">69 °C</option>
+                            <option value="70">70 °C</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="koef">
+                        <div class="val-title">коэффициент<br />кривой</div>
+                        <div class="val">
+                          <select
+                            id="floorCoefSelect"
+                            onchange="changeSelect(event)"
+                          >
+                            <option value="0.0">0.0</option>
+                            <option value="0.1">0.1</option>
+                            <option value="0.2">0.2</option>
+                            <option value="0.3">0.3</option>
+                            <option value="0.4">0.4</option>
+                            <option value="0.5">0.5</option>
+                            <option value="0.6">0.6</option>
+                            <option value="0.7">0.7</option>
+                            <option value="0.8">0.8</option>
+                            <option value="0.9">0.9</option>
+                            <option value="1.0">1.0</option>
+                            <option value="1.1">1.1</option>
+                            <option value="1.2">1.2</option>
+                            <option value="1.3">1.3</option>
+                            <option value="1.4">1.4</option>
+                            <option value="1.5">1.5</option>
+                            <option value="1.6">1.6</option>
+                            <option value="1.7">1.7</option>
+                            <option value="1.8">1.8</option>
+                            <option value="1.9">1.9</option>
+                            <option value="2.0">2.0</option>
+                            <option value="2.1">2.1</option>
+                            <option value="2.2">2.2</option>
+                            <option value="2.3">2.3</option>
+                            <option value="2.4">2.4</option>
+                            <option value="2.5">2.5</option>
+                            <option value="2.6">2.6</option>
+                            <option value="2.7">2.7</option>
+                            <option value="2.8">2.8</option>
+                            <option value="2.9">2.9</option>
+                            <option value="3.0">3.0</option>
+                            <option value="3.1">3.1</option>
+                            <option value="3.2">3.2</option>
+                            <option value="3.3">3.3</option>
+                            <option value="3.4">3.4</option>
+                            <option value="3.5">3.5</option>
+                            <option value="3.6">3.6</option>
+                            <option value="3.7">3.7</option>
+                            <option value="3.8">3.8</option>
+                            <option value="3.9">3.9</option>
+                            <option value="4.0">4.0</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="temp-cont">
+                        <div class="val-title">температура<br />контура</div>
+                        <div class="temp-val">
+                          <span id="temperatureFloorContor">123</span> °C
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../js/bake.js"></script>
+  </body>
+</html>

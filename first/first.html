@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мой дом</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <h1 class="top-header">
+              <a href="../index.html" class="header__logo">
+                <span>Мой</span> Дом
+              </a>
+            </h1>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section id="section-second" class="card">
+          <div class="container">
+            <div class="card__navigate">
+              <a href="../index.html" class="card__back"></a>
+              <p class="card__path">
+                <a href="../index.html">Главная</a> / Первый этаж
+              </p>
+            </div>
+            <h3 class="card__title">Первый этаж</h3>
+            <div class="card__inner">
+              <ul class="card__items">
+                <li class="card__item name">
+                  <a href="./enter.html" class="card__item-link">
+                    <div id="enter" class="image-first"></div>
+                    <div class="card__item-text">Входы</div>
+                  </a>
+                </li>
+
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="mainSpot"
+                    onclick=""
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Главная
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="yardSpot"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Во двор
+                  </div>
+                </li>
+              </ul>
+              <ul class="card__items">
+                <li class="card__item name">
+                  <a href="./hallway.html" class="card__item-link">
+                    <div id="hallway" class="image-first"></div>
+                    <div class="card__item-text">Прихожая</div>
+                  </a>
+                </li>
+
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="hallwaySpot"
+                    onclick=""
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Спот
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="hallwayTrack"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Трэк
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="hallwayShim"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Подсветка
+                  </div>
+                </li>
+              </ul>
+              <ul class="card__items">
+                <li class="card__item name">
+                  <a href="./ladder.html" class="card__item-link">
+                    <div id="ladder" class="image-first"></div>
+                    <div class="card__item-text">Лестница</div>
+                  </a>
+                </li>
+
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="ladderSpot1"
+                    onclick=""
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Спот 1
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="ladderSpot2"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Спот 2
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="ladderBra"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Бра
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="ladderShim"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Подсветка
+                  </div>
+                </li>
+              </ul>
+              <ul class="card__items">
+                <li class="card__item name">
+                  <a href="./kitchen.html" class="card__item-link">
+                    <div id="kitchen" class="image-first"></div>
+                    <div class="card__item-text">Кухня</div>
+                  </a>
+                </li>
+
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="kitchenSpot"
+                    onclick=""
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Спот
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="kitchenLamp"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Лампа
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="kitchenShim"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Shim
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="kitchenTable"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Столешница
+                  </div>
+                </li>
+              </ul>
+              <ul class="card__items">
+                <li class="card__item name">
+                  <a href="./livingRoom.html" class="card__item-link">
+                    <div id="livingRoom" class="image-first"></div>
+                    <div class="card__item-text">Гостиная</div>
+                  </a>
+                </li>
+
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="livingRoomSpot"
+                    onclick=""
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Спот
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="livingRoomLamp"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Лампа
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="livingRoomTrack"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Трэк
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="livingRoomBra"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Бра
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="livingRoomTV"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Led TV
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="livingRoomCloset"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Led Шкаф
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="livingRoomBedsideTable"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Led Тумба
+                  </div>
+                </li>
+              </ul>
+              <ul class="card__items">
+                <li class="card__item name">
+                  <a href="./sanFirst.html" class="card__item-link">
+                    <div id="san" class="image-first"></div>
+                    <div class="card__item-text">Санузел</div>
+                  </a>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="sanFirstSpot"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Спот
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="sanFirstLight"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Свет
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    id="sanFirstWall"
+                    onclick="GetCheck(event)"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Led стена
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    id="sanFirstShim"
+                    onclick="GetCheck(event)"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Д.Д. Подсветка
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    id="sanFirstWind"
+                    onclick="GetCheck(event)"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Вытяжка
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../js/first.js"></script>
+  </body>
+</html>

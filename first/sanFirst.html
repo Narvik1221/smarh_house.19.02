@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width , initial-scale=1.0,maximum-scale=1.0 ,user-scalable=0"
+    />
+    <title>Мой дом</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <h1 class="top-header">
+              <a href="../index.html" class="header__logo">
+                <span>Мой</span> Дом
+              </a>
+            </h1>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section id="section-second-sanFirst" class="room">
+          <div class="container">
+            <div class="card__navigate">
+              <a href="./first.html" class="card__back"></a>
+              <p class="card__path">
+                <a href="../index.html">Главная</a>
+                <a href="./first.html">/ Первый этаж</a> / Санузел
+              </p>
+            </div>
+            <h3 class="card__title">Санузел</h3>
+            <div class="card__inner room__inner">
+              <ul class="card__items room__items">
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="sanFirstSpot"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Спот
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="sanFirstLight"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Свет
+                  </div>
+                </li>
+                <li class="card__item wide ranges">
+                  <div class="double-ranges-check right">
+                    <button
+                      onclick="GetCheck(event)"
+                      id="sanFirstWall"
+                      class="switch"
+                    ></button>
+                  </div>
+                  <div class="range">
+                    <div class="container-double-ranges">
+                      <input
+                        id="leftRange"
+                        class="plus"
+                        type="button"
+                        name="increase"
+                        value="-"
+                        onclick="increaseRange('sanFirstSliderWall',false)"
+                      />
+                      <div class="double-ranges one">
+                        <div class="value">0</div>
+                        <input
+                          id="sanFirstSliderWall"
+                          type="range"
+                          min="0"
+                          max="100"
+                          value="0"
+                          onchange="range(event.target.id)"
+                          class="range-input"
+                        />
+                        <div class="card__item-text">Led Стена</div>
+                      </div>
+                      <input
+                        id="leftRange"
+                        class="plus"
+                        type="button"
+                        name="increase"
+                        value="+"
+                        onclick="increaseRange('sanFirstSliderWall',true)"
+                      />
+                    </div>
+                  </div>
+                </li>
+                <li class="card__item wide ranges">
+                  <div class="double-ranges-check">
+                    <label class="custom-checkbox">
+                      <input
+                        id="sanFirstShimMotion"
+                        onchange="changeCheckBox(event)"
+                        type="checkbox"
+                      />
+                      <span class="checkmark"></span>
+                      <div class="checkbox-text">Д.Д.</div>
+                    </label>
+                    <button
+                      onclick="GetCheck(event)"
+                      id="sanFirstShim"
+                      class="switch"
+                    ></button>
+                  </div>
+                  <div class="range">
+                    <div class="container-double-ranges">
+                      <input
+                        id="leftRange"
+                        class="plus"
+                        type="button"
+                        name="increase"
+                        value="-"
+                        onclick="increaseRange('sanFirstSliderShim',false)"
+                      />
+                      <div class="double-ranges one">
+                        <div class="value">0</div>
+                        <input
+                          id="sanFirstSliderShim"
+                          type="range"
+                          min="0"
+                          max="100"
+                          value="0"
+                          onchange="range(event.target.id)"
+                          class="range-input"
+                        />
+                        <div class="card__item-text">Д. Д. Подсветка</div>
+                      </div>
+                      <input
+                        id="leftRange"
+                        class="plus"
+                        type="button"
+                        name="increase"
+                        value="+"
+                        onclick="increaseRange('sanFirstSliderShim',true)"
+                      />
+                    </div>
+                  </div>
+                </li>
+                <li class="card__item wide ranges">
+                  <div class="double-ranges-check">
+                    <label class="custom-checkbox">
+                      <input
+                        id="sanFirstWindMotion"
+                        onchange="changeCheckBox(event)"
+                        type="checkbox"
+                      />
+                      <span class="checkmark"></span>
+                      <div class="checkbox-text">Д.Д.</div>
+                    </label>
+                    <label class="custom-checkbox">
+                      <input
+                        class="checkboxTempHum1"
+                        id="checkboxTempHum1"
+                        onchange="changeRadio(event)"
+                        type="radio"
+                        name="sanFirstcheckboxTempHum"
+                        value="1"
+                      />
+                      <span class="checkmark"></span>
+                      <div class="checkbox-text">
+                        % [ <span class="w20" id="humidityDht">0 </span> ]
+                      </div>
+                    </label>
+                    <label class="custom-checkbox">
+                      <input
+                        class="checkboxTempHum2"
+                        id="checkboxTempHum2"
+                        onchange="changeRadio(event)"
+                        type="radio"
+                        name="sanFirstcheckboxTempHum"
+                        value="0"
+                      />
+                      <span class="checkmark"></span>
+                      <div class="checkbox-text">
+                        C &deg [
+                        <span class="w20" id="temperatureDht"> 0</span> ]
+                      </div>
+                    </label>
+                    <button
+                      id="sanFirstWind"
+                      onclick="GetCheck(event)"
+                      class="switch"
+                    ></button>
+                  </div>
+
+                  <div id="temp-range" class="container-double-ranges">
+                    <input
+                      id="leftRange"
+                      class="plus"
+                      type="button"
+                      name="increase"
+                      value="-"
+                      onclick="increaseDoubleRangeTemp(true)"
+                    />
+
+                    <div class="double-ranges">
+                      <div class="values">
+                        <span id="range1">30 </span>
+                        <span> &dash; </span>
+                        <span id="range2">70 </span>
+                      </div>
+                      <div id="slider-track-temp" class="slider-track"></div>
+
+                      <input
+                        class="double-range"
+                        type="range"
+                        min="0"
+                        max="50"
+                        value="50"
+                        step="1"
+                        id="sanFirstsliderMinTemp"
+                      />
+                      <input
+                        class="double-range"
+                        type="range"
+                        min="0"
+                        max="50"
+                        value="50"
+                        step="1"
+                        id="sanFirstsliderMaxTemp"
+                      />
+
+                      <div class="card__item-text double-range-text">
+                        Вытяжка
+                      </div>
+                    </div>
+                    <input
+                      id="rightRange"
+                      class="plus"
+                      type="button"
+                      name="decrease"
+                      value="+"
+                      onclick="increaseDoubleRangeTemp(false)"
+                    />
+                  </div>
+
+                  <div id="hum-range" class="container-double-ranges none">
+                    <input
+                      id="leftRange"
+                      class="plus"
+                      type="button"
+                      name="increase"
+                      value="-"
+                      onclick="increaseDoubleRangeHum(true)"
+                    />
+
+                    <div class="double-ranges">
+                      <div class="values">
+                        <span id="range1">10 </span>
+                        <span> &dash; </span>
+                        <span id="range2">30 </span>
+                      </div>
+                      <div id="slider-track-hum" class="slider-track"></div>
+
+                      <input
+                        class="double-range"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="100"
+                        step="1"
+                        id="sanFirstsliderMinHum"
+                      />
+                      <input
+                        class="double-range"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="100"
+                        step="1"
+                        id="sanFirstsliderMaxHum"
+                      />
+
+                      <div class="card__item-text double-range-text">
+                        Вытяжка
+                      </div>
+                    </div>
+                    <input
+                      id="rightRange"
+                      class="plus"
+                      type="button"
+                      name="decrease"
+                      value="+"
+                      onclick="increaseDoubleRangeHum(false)"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../js/first.js"></script>
+  </body>
+</html>

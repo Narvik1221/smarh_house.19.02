@@ -1,0 +1,230 @@
+// дедская
+if tach6Fell = 1
+and tach6 = 0
+then this pinout not childrenSpot 
+then this param add tach6Fell 0
+end
+if tach7Fell = 1
+and tach7 = 1
+then this pinout not childrenTrack 
+then this param add tach6Fell 0
+then this param add tach7Fell 0
+end
+if tach14Fell = 1
+and tach14 = 0
+then this pinout not childrenShim 
+then this param add tach14Fell 0
+end
+if childrenShim = 1
+then this map child {{childrenSliderShim}} 0 100
+then this pwm {{child}} childrenSliderShimL
+// then this pwm {{childrenSliderShim}} childrenSliderShimL
+end 
+if childrenShim = 0
+then this pwm off childrenSliderShimL
+end 
+// спальня
+if bedroomShim = 1
+then this map bed {{bedroomSliderShim}} 0 100
+then this pwm {{bed}} bedroomSliderShimL
+// then this print {{pa}}
+end 
+if bedroomShim = 0
+then this pwm off bedroomSliderShimL
+end 
+if bedroomCase = 1
+then this map bedr {{bedroomSliderCase}} 0 100
+then this pwm {{bedr}} bedroomSliderCaseL
+end 
+if bedroomCase = 0
+then this pwm off bedroomSliderCaseL
+end 
+if tach0Fell = 1
+and tach0 = 0
+then this pinout not bedroomSpot
+then this param add tach0Fell 0
+end
+if tach1Fell = 1
+and tach1 = 1
+then this pinout not bedroomLamp
+then this param add tach1Fell 0
+then this param add tach0Fell 0
+end
+if tach2Fell = 1
+and tach2 = 0
+then this pinout not bedroomTrack
+then this param add tach2Fell 0
+end
+if tach3Fell = 1
+and tach3 = 1
+then this pinout not bedroomBra
+then this param add tach3Fell 0
+then this param add tach2Fell 0
+end
+// кабинет
+if tach8Fell = 1
+and tach8 = 0
+then this pinout not officeRightSpot
+then this param add tach8Fell 0
+end
+if tach9Fell = 1
+and tach9 = 1
+then this pinout not officeLeftSpot
+then this param add tach9Fell 0
+then this param add tach8Fell 0
+end
+if tach10Fell = 1
+and tach10 = 0
+then this pinout not officeBra
+then this param add tach10Fell 0
+end
+// дельта срабатывания по разнице между датчиками dht
+// param add delta {{humiditySan}}
+// param - delta {{humidityPr}}
+// param | delta |
+// print {{delta}}
+// print {{humiditySan}} {{humidityPr}}
+// param add delta1 {{humidity2Etaj}}
+// param - delta1 {{humidityPr}}
+// param | delta1 |
+// param add delta2 {{humidity2Etaj}}
+// param - delta2 {{humiditySan}}
+// param | delta2 |
+// санузел
+// выключатели
+if tach4Fell = 1
+and tach4 = 0
+then this pinout not sanSpot
+then this param add tach4Fell 0
+end
+if tach5Fell = 1
+and tach5 = 1
+then this pinout not sanLight
+then this param add tach5Fell 0
+then this param add tach4Fell 0
+end
+// подсветка
+if sanShim = 0
+then this pwm off sanSliderShimL
+end
+if sanShim = 1
+and sanShimMotion = 0
+then this map sans {{sanSliderShim}} 0 100
+then this pwm {{sans}} sanSliderShimL
+// then this pwm {{sanSliderShim}} sanSliderShimL
+end 
+if sanShim = 1 
+and sanShimMotion = 1
+and tach12Fell = 1 
+and tach12 = 0 
+then this map sans {{sanSliderShim}} 0 100
+then this pwm {{sans}} sanSliderShimL
+then this param add tach12Fell 0
+end
+if sanShim = 1
+and sanShimMotion = 1
+and tach12Rose = 1 
+and tach12 = 1
+then this pwm off sanSliderShimL
+then this param add tach12Rose 0
+end
+// санузел
+// вытежка влажность
+if sanWind = 0
+then this pwm off checkboxTempHumL
+end
+if sanWind = 1
+and sanWindMotion = 0
+and humiditySan >= {{humidity2Etaj}}
+and humiditySan > {{sliderMinHum}}
+and humiditySan < {{sliderMaxHum}}
+then this map pawSan {{humiditySan}} {{sliderMinHum}} {{sliderMaxHum}}
+then this pwm {{pawSan}} checkboxTempHumL
+// then this print humiditySan
+// then this print temp ok
+end
+if sanWind = 1
+and sanWindMotion = 0
+and humiditySan >= {{humidity2Etaj}}
+and sliderMinHum != {{sliderMaxHum}}
+and humiditySan >= {{sliderMaxHum}}
+then this pwm on checkboxTempHumL
+end
+if sanWind = 1
+and sanWindMotion = 0
+and sliderMinHum != {{sliderMaxHum}}
+and humiditySan <= {{sliderMinHum}}
+then this pwm off checkboxTempHumL
+end
+// с датчиком движения
+if sanWind = 1
+and sanWindMotion = 1
+and tach13Fell = 1 
+and tach13 = 0
+and humiditySan > {{sliderMinHum}}
+and humiditySan < {{sliderMaxHum}}
+then this pwm 50 checkboxTempHumL
+then this param add tach13Fell 0
+end
+if sanWind = 1
+and sanWindMotion = 1
+and tach13Rose = 1  
+and tach13 = 1
+and humiditySan > {{sliderMinHum}}
+and humiditySan < {{sliderMaxHum}}
+then this map pawSan {{humiditySan}} {{sliderMinHum}} {{sliderMaxHum}}
+then this pwm {{pawSan}} checkboxTempHumL
+then this param add tach13Rose 0
+end 
+//прачка
+if tach15Fell = 1
+and tach15 = 0
+then this pinout not laundrySpot
+then this param add tach15Fell 0
+end
+if laundryBra = 0
+then this pinout off laundryBraL
+end
+if laundryBra = 1
+and laundryMotionBra = 0
+then this pinout on laundryBraL
+end
+if laundryBra = 1
+and laundryMotionBra = 1
+and tach16Fell = 1 
+and tach16 = 0
+then this pinout on laundryBraL
+then this param add tach16Fell 0
+end
+if laundryBra = 1
+and laundryMotionBra = 1
+and tach16Rose = 1 
+and tach16 = 1
+then this pinout off laundryBraL
+then this param add tach16Rose 0
+end
+// прачка
+// вытежка влажность
+if sanWindLaundry = 0
+then this pwm off checkboxTempHumLaundryL
+end
+if sanWindLaundry = 1
+and humidityPr >= {{humidity2Etaj}}
+and humidityPr > {{sliderMinHumLaundry}}
+and humidityPr < {{sliderMaxHumLaundry}}
+then this map pawPr {{humidityPr}} {{sliderMinHumLaundry}} {{sliderMaxHumLaundry}}
+then this pwm {{pawPr}} checkboxTempHumLaundryL
+then this print {{pawPr}}
+// then this print humiditySan
+// then this print temp ok
+end
+if sanWindLaundry = 1
+and humidityPr >= {{humidity2Etaj}}
+and sliderMinHumLaundry != {{sliderMaxHumLaundry}}
+and humidityPr >= {{sliderMaxHumLaundry}}
+then this pwm on checkboxTempHumLaundryL
+end
+if sanWindLaundry = 1
+and sliderMinHumLaundry != {{sliderMaxHumLaundry}}
+and humidityPr <= {{sliderMinHumLaundry}}
+then this pwm off checkboxTempHumLaundryL

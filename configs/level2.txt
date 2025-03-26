@@ -1,0 +1,72 @@
+I2C 21 22 
+UART 115200
+// спальня
+PINOUT 40 bedroomSpot 0 0
+PINOUT 41 bedroomLamp 0 0
+PINOUT 42 bedroomTrack 0 0
+PINOUT 43 bedroomBra 0 0
+TACH 55 tach0 20 0
+TACH 55 tach1 500 0
+TACH 54 tach2 20 0
+TACH 54 tach3 500 0
+param add bedroomShim 0
+param add bedroomSliderShim 0
+PWM 2 bedroomSliderShimL 0 0
+param add bedroomCase 0
+param add bedroomSliderCase 0
+PWM 26 bedroomSliderCaseL 0 0
+// санузел
+PINOUT 44 sanSpot 0 0
+PINOUT 45 sanLight 0 0
+TACH 53 tach4 20 0
+TACH 53 tach5 500 0
+param add sanShim 0
+param add sanSliderShim 0
+PWM 27 sanSliderShimL 0 0
+TACH 35 tach13 20 0
+param add sanWind 0
+param add sanWindMotion 0
+param add checkboxTempHum 0
+PWM 32 checkboxTempHumL 0 0
+param add sliderMinTemp 0
+param add sliderMaxTemp 50
+param add sliderMinHum 0
+param add sliderMaxHum 100
+TACH 34 tach12 20 0
+DHT 16 San
+// дедская
+PINOUT 52 childrenSpot 0 0
+PINOUT 53 childrenTrack 0 0
+TACH 52 tach6 20 0
+TACH 52 tach7 500 0
+TACH 51 tach14 20 0
+param add childrenShim 0
+param add childrenSliderShim 0
+PWM 14 childrenSliderShimL 0 0
+// кобинет
+PINOUT 49 officeBra 0 0
+PINOUT 50 officeRightSpot 0 0
+PINOUT 51 officeLeftSpot 0 0
+TACH 50 tach8 20 0
+TACH 50 tach9 500 0
+TACH 49 tach10 20 0
+// прачка
+PINOUT 48 laundrySpot 0 0
+param add laundryBra 0
+param add laundryMotionBra 0
+PINOUT 54 laundryBraL 0 0
+TACH 48 tach15 20 0
+TACH 25 tach16 20 0
+DHT 17 Pr
+// DHT 18 2Etaj
+param add sanWindLaundry 0
+param add checkboxTempHumLaundry 0
+PWM 33 checkboxTempHumLaundryL 0 0
+param add sliderMinTempLaundry 0
+param add sliderMaxTempLaundry 50
+param add sliderMinHumLaundry 0
+param add sliderMaxHumLaundry 100
+// температура
+DS 15 2Etaj
+DS 4 w
+DS 5 e

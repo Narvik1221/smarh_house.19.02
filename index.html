@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мой дом</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <h1 class="top-header">
+              <a href="./index.html" class="header__logo">
+                <span>Мой</span> Дом
+              </a>
+            </h1>
+            <div class="wifi">
+              <button id="toggleButton" class="wifi-toggle">Wi-Fi</button>
+              <div id="toggleBlock">
+                <form class="wifi-form" id="networkForm">
+                  <label
+                    >Имя сети:
+                    <input
+                      type="text"
+                      id="networkName"
+                      name="networkName"
+                      required
+                  /></label>
+
+                  <label
+                    >Пароль:
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      required
+                    />
+                  </label>
+                  <button id="wifi-btn" type="button">Применить</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section class="main" id="section-main">
+          <div class="container">
+            <div class="main__inner">
+              <div class="main__items large">
+                <button
+                  class="level main__item large"
+                  name="level_1"
+                  data-link="./first/first.html"
+                >
+                  <div class="main__item-link">
+                    <div id="h1" class="image large"></div>
+                    <div class="main__item-text">Первый этаж</div>
+                  </div>
+                </button>
+                <button
+                  class="level main__item large"
+                  name="level_2"
+                  data-link="./second/second.html"
+                >
+                  <div class="main__item-link">
+                    <div id="h2" class="image large"></div>
+                    <div class="main__item-text">Второй этаж</div>
+                  </div>
+                </button>
+              </div>
+              <ul class="main__items small">
+                <li class="main__item">
+                  <button
+                    name="bake"
+                    data-link="./bake/bake.html"
+                    class="level main__item-link"
+                  >
+                    <div id="cotel" class="image"></div>
+
+                    <div class="main__item-text">Котельная</div>
+                  </button>
+                </li>
+                <li class="main__item">
+                  <a href="" class="main__item-link">
+                    <div id="garage" class="image"></div>
+
+                    <div class="main__item-text">Гараж</div>
+                  </a>
+                </li>
+                <li class="main__item">
+                  <a href="" class="main__item-link">
+                    <div id="water" class="image"></div>
+                    <div class="main__item-text">Водоснабжение</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width , initial-scale=1.0,maximum-scale=1.0 ,user-scalable=0"
+    />
+    <title>Мой дом</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <h1 class="top-header">
+              <a href="../index.html" class="header__logo">
+                <span>Мой</span> Дом
+              </a>
+              <div class="header__info">
+                <div class="checkbox-text">
+                  % [ <span class="w20" id="humidity2Etaj">0 </span> ]
+                </div>
+                <div class="checkbox-text">
+                  C &deg [
+                  <span class="w20" id="temperature2Etaj"> 0</span> ]
+                </div>
+              </div>
+            </h1>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section id="section-second-san" class="room">
+          <div class="container">
+            <div class="card__navigate">
+              <a href="./second.html" class="card__back"></a>
+              <p class="card__path">
+                <a href="../index.html">Главная</a>
+                <a href="./second.html">/ Второй этаж</a> / Офис
+              </p>
+            </div>
+            <h3 class="card__title">Офис</h3>
+            <div class="card__inner room__inner">
+              <ul class="card__items room__items">
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="officeBra"
+                    onclick=""
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Бра
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="officeLeftSpot"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Левый спот
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="officeRightSpot"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Правый спот
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../js/second.js"></script>
+  </body>
+</html>

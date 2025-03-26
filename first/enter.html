@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width , initial-scale=1.0,maximum-scale=1.0 ,user-scalable=0"
+    />
+    <title>Мой дом</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <h1 class="top-header">
+              <a href="../index.html" class="header__logo">
+                <span>Мой</span> Дом
+              </a>
+            </h1>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section id="section-second-san" class="room">
+          <div class="container">
+            <div class="card__navigate">
+              <a href="./first.html" class="card__back"></a>
+              <p class="card__path">
+                <a href="../index.html">Главная</a>
+                <a href="./first.html">/ Первый этаж</a> / Входы
+              </p>
+            </div>
+            <h3 class="card__title">Входы</h3>
+            <div class="card__inner room__inner">
+              <ul class="card__items room__items">
+                <li class="card__item">
+                  <div class="flex">
+                    <button
+                      onclick="GetCheck(event)"
+                      id="mainSpot"
+                      onclick=""
+                      class="switch"
+                    ></button>
+                    <label class="custom-checkbox">
+                      <input
+                        id="mainMotion"
+                        onchange="changeCheckBox(event)"
+                        type="checkbox"
+                      />
+                      <span class="checkmark"></span>
+                      <div class="checkbox-text">Д.Д.</div>
+                    </label>
+                  </div>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Главный
+                  </div>
+                </li>
+                <li class="card__item">
+                  <div class="flex">
+                    <button
+                      onclick="GetCheck(event)"
+                      id="yardSpot"
+                      onclick=""
+                      class="switch"
+                    ></button>
+                    <label class="custom-checkbox">
+                      <input
+                        id="yardMotion"
+                        onchange="changeCheckBox(event)"
+                        type="checkbox"
+                      />
+                      <span class="checkmark"></span>
+                      <div class="checkbox-text">Д.Д.</div>
+                    </label>
+                  </div>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Во двор
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../js/first.js"></script>
+  </body>
+</html>

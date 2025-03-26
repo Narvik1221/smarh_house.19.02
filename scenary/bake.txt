@@ -1,0 +1,9 @@
+// батареи
+if 1timeKontyr != 0
+// then this print {{targetKontyr}}
+then this print 1timeKontyr
+then this print {{1timeKontyr}}
+// теплый пол
+if 2timeKontyr != 0
+then this print 2timeKontyr
+then this print {{2timeKontyr}}

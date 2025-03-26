@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width , initial-scale=1.0,maximum-scale=1.0 ,user-scalable=0"
+    />
+    <title>Мой дом</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <h1 class="top-header">
+              <a href="../index.html" class="header__logo">
+                <span>Мой</span> Дом
+              </a>
+            </h1>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section id="section-second-san" class="room">
+          <div class="container">
+            <div class="card__navigate">
+              <a href="./first.html" class="card__back"></a>
+              <p class="card__path">
+                <a href="../index.html">Главная</a>
+                <a href="./first.html">/ Первый этаж</a> / Гостиная
+              </p>
+            </div>
+            <h3 class="card__title">Гостиная</h3>
+            <div class="card__inner room__inner">
+              <ul class="card__items room__items">
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="livingRoomSpot"
+                    onclick=""
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Спот
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="livingRoomLamp"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Люстра
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="livingRoomTrack"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Трэк
+                  </div>
+                </li>
+                <li class="card__item">
+                  <button
+                    onclick="GetCheck(event)"
+                    id="livingRoomBra"
+                    class="switch"
+                  ></button>
+                  <div
+                    onclick="textBtn(event)"
+                    class="card__item-text text-btn"
+                  >
+                    Бра
+                  </div>
+                </li>
+              </ul>
+              <ul class="card__items room__items">
+                <li class="card__item wide ranges">
+                  <div class="double-ranges-check right">
+                    <button
+                      onclick="GetCheck(event)"
+                      id="livingRoomTV"
+                      class="switch"
+                    ></button>
+                  </div>
+                  <div class="range">
+                    <div class="container-double-ranges">
+                      <input
+                        id="leftRange"
+                        class="plus"
+                        type="button"
+                        name="increase"
+                        value="-"
+                        onclick="increaseRange('livingRoomSliderTV',false)"
+                      />
+                      <div class="double-ranges one">
+                        <div class="value">0</div>
+                        <input
+                          onchange="range(event.target.id)"
+                          id="livingRoomSliderTV"
+                          type="range"
+                          min="0"
+                          max="100"
+                          value="0"
+                          class="range-input"
+                        />
+                        <div class="card__item-text">Led TV</div>
+                      </div>
+                      <input
+                        id="leftRange"
+                        class="plus"
+                        type="button"
+                        name="increase"
+                        value="+"
+                        onclick="increaseRange('livingRoomSliderTV',true)"
+                      />
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <ul class="card__items room__items">
+                <li class="card__item wide ranges">
+                  <div class="double-ranges-check right">
+                    <button
+                      onclick="GetCheck(event)"
+                      id="livingRoomBedsideTable"
+                      class="switch"
+                    ></button>
+                  </div>
+                  <div class="range">
+                    <div class="container-double-ranges">
+                      <input
+                        id="leftRange"
+                        class="plus"
+                        type="button"
+                        name="increase"
+                        value="-"
+                        onclick="increaseRange('livingRoomSliderBedsideTable',false)"
+                      />
+                      <div class="double-ranges one">
+                        <div class="value">0</div>
+                        <input
+                          onchange="range(event.target.id)"
+                          id="livingRoomSliderBedsideTable"
+                          type="range"
+                          min="0"
+                          max="100"
+                          value="0"
+                          class="range-input"
+                        />
+                        <div class="card__item-text">Тумба</div>
+                      </div>
+                      <input
+                        id="leftRange"
+                        class="plus"
+                        type="button"
+                        name="increase"
+                        value="+"
+                        onclick="increaseRange('livingRoomSliderBedsideTable',true)"
+                      />
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <ul class="card__items room__items">
+                <li class="card__item wide ranges">
+                  <div class="double-ranges-check right">
+                    <button
+                      onclick="GetCheck(event)"
+                      id="livingRoomCloset"
+                      class="switch"
+                    ></button>
+                  </div>
+                  <div class="range">
+                    <div class="container-double-ranges">
+                      <input
+                        id="leftRange"
+                        class="plus"
+                        type="button"
+                        name="increase"
+                        value="-"
+                        onclick="increaseRange('livingRoomSliderCloset',false)"
+                      />
+                      <div class="double-ranges one">
+                        <div class="value">0</div>
+                        <input
+                          onchange="range(event.target.id)"
+                          id="livingRoomSliderCloset"
+                          type="range"
+                          min="0"
+                          max="100"
+                          value="0"
+                          class="range-input"
+                        />
+                        <div class="card__item-text">Шкаф</div>
+                      </div>
+                      <input
+                        id="leftRange"
+                        class="plus"
+                        type="button"
+                        name="increase"
+                        value="+"
+                        onclick="increaseRange('livingRoomSliderCloset',true)"
+                      />
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../js/first.js"></script>
+  </body>
+</html>
