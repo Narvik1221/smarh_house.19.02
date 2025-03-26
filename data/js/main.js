@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  let levels = document.querySelectorAll(".levels");
+  let levels = document.querySelectorAll("#levels");
   let servers = await getServers();
   console.log(servers);
   console.log(levels);
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     i.addEventListener("click", async (event) => {
       console.log(servers);
       let level = event.currentTarget.name;
-      console.log("level", level);
+      console.log(level);
       const pageName = i.getAttribute("data-link");
       urlObject = new URL(window.location.href);
       console.log(servers[level]);

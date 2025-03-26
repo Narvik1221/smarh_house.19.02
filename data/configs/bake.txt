@@ -1,0 +1,17 @@
+UART 115200
+NTP
+// котельная улица
+DS 15 Bake
+// батареи
+DS 4 BatteryContor
+PINOUT 26 batteryNasos 0 0
+PINOUT 13 1relayLeft 0 0
+PINOUT 27 1relayRight 0 0
+TK 1timeKontyr temperatureBake batteryRoomTempSelect batteryCoefSelect temperatureBatteryContor 1.0
+// теплый пол
+DS 5 FloorContor
+PINOUT 25 floorNasoss 0 0
+PINOUT 33 2relayLeft 0 0
+PINOUT 32 2relayRight 0 0
+TK 2timeKontyr temperatureBake floorRoomTempSelect floorCoefSelect temperatureFloorContor 0.5
+CALC

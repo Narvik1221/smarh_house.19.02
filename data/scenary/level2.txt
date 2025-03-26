@@ -134,24 +134,25 @@ if sanWind = 0
 then this pwm off checkboxTempHumL
 end
 if sanWind = 1
-and sanWindMotion = 0
-and humiditySan >= {{humidity2Etaj}}
+and tach13 = 1
+// and humiditySan >= {{humidity2Etaj}}
 and humiditySan > {{sliderMinHum}}
 and humiditySan < {{sliderMaxHum}}
 then this map pawSan {{humiditySan}} {{sliderMinHum}} {{sliderMaxHum}}
 then this pwm {{pawSan}} checkboxTempHumL
-// then this print humiditySan
+then this print {{pawSan}} - {{checkboxTempHumL}}
 // then this print temp ok
 end
 if sanWind = 1
-and sanWindMotion = 0
-and humiditySan >= {{humidity2Etaj}}
+and tach13 = 1
+// and humiditySan >= {{humidity2Etaj}}
 and sliderMinHum != {{sliderMaxHum}}
 and humiditySan >= {{sliderMaxHum}}
 then this pwm on checkboxTempHumL
+then this print {{pawSan}} - {{checkboxTempHumL}}
 end
 if sanWind = 1
-and sanWindMotion = 0
+and tach13 = 1
 and sliderMinHum != {{sliderMaxHum}}
 and humiditySan <= {{sliderMinHum}}
 then this pwm off checkboxTempHumL
@@ -159,29 +160,23 @@ end
 // с датчиком движения
 if sanWind = 1
 and sanWindMotion = 1
-and tach13Fell = 1 
 and tach13 = 0
-and humiditySan > {{sliderMinHum}}
-and humiditySan < {{sliderMaxHum}}
-then this pwm 50 checkboxTempHumL
-then this param add tach13Fell 0
-end
-if sanWind = 1
-and sanWindMotion = 1
-and tach13Rose = 1  
-and tach13 = 1
-and humiditySan > {{sliderMinHum}}
-and humiditySan < {{sliderMaxHum}}
-then this map pawSan {{humiditySan}} {{sliderMinHum}} {{sliderMaxHum}}
-then this pwm {{pawSan}} checkboxTempHumL
-then this param add tach13Rose 0
+and checkboxTempHumL <= 200
+then this pwm 200 checkboxTempHumL
+then this print "включил"
+then this print {{pawSan}} - {{checkboxTempHumL}}
 end 
 //прачка
 if tach15Fell = 1
 and tach15 = 0
-then this pinout not laundrySpot
+then this pinout not laundrySpot 
 then this param add tach15Fell 0
 end
+if tach11Fell = 1
+and tach11 = 1
+then this pinout not laundryBra 
+then this param add tach11Fell 0
+then this param add tach15Fell 0
 if laundryBra = 0
 then this pinout off laundryBraL
 end

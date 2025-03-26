@@ -1,0 +1,3 @@
+Котельная - {"ssid":"DIR-841-8cde","password":"11412786","SSDP":"bake","configs":"bake","tZone":3}
+Первый этаж - {"ssid":"DIR-841-8cde","password":"11412786","SSDP":"level_1","configs":"level1","tZone":3}
+Второй этаж - {"ssid":"DIR-841-8cde","password":"11412786","SSDP":"level_2","configs":"level2","tZone":3}

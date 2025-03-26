@@ -1,0 +1,40 @@
+// отопление
+if batteryPump = 0
+then this param add 1timeKontyr 0
+param add 1time {{1timeKontyr}}
+param | 1time |
+if 1timeKontyr < 0
+then this puls off 1relayLeft
+then this puls on 1relayRight {{1time}}s
+if 1timeKontyr > 0
+then this puls off 1relayRight
+then this puls on 1relayLeft {{1time}}s
+if 1relayRight = 0
+and  1relayLeft = 0
+// then this print "установлен контур отопления" {{1timeKontyr}} - {{1time}}
+if 1relayLeft = 1
+// then this print "открывает контур отопления" {{1timeKontyr}} - {{1time}}
+then this param add 1timeKontyr 0
+if 1relayRight = 1
+// then this print "закрывает контур отопления" {{1timeKontyr}} - {{1time}}
+then this param add 1timeKontyr 0
+// теплый пол
+if floorPump = 0
+then this param add 2timeKontyr 0
+param add 2time {{2timeKontyr}}
+param | 2time |
+if 2timeKontyr < 0
+then this puls off 2relayLeft
+then this puls on 2relayRight {{2time}}s
+if 2timeKontyr > 0
+then this puls off 2relayRight
+then this puls on 2relayLeft {{2time}}s
+if 2relayRight = 0
+and  2relayLeft = 0
+// then this print "установлен контур отопления" {{2timeKontyr}} - {{2time}}
+if 2relayLeft = 1
+// then this print "открывает контур отопления" {{2timeKontyr}} - {{2time}}
+then this param add 2timeKontyr 0
+if 2relayRight = 1
+// then this print "закрывает контур отопления" {{2timeKontyr}} - {{2time}}
+then this param add 2timeKontyr 0
