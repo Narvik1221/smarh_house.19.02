@@ -52,26 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
   let localIp = localStorage.getItem("ip");
   console.log(localIp);
-  if (!!localIp) {
-    init(localIp);
-  }
-  function init(ip) {
-    Socket = new WebSocket("ws://" + ip + ":81/");
-    Socket.onmessage = function (event) {
-      console.log(event);
-    };
-    Socket.onclose = function () {
-      console.log("WebSocket соединение закрыто");
-    };
 
-    // Закрываем WebSocket при уходе со страницы
-    window.onbeforeunload = function () {
-      if (Socket && Socket.readyState === WebSocket.OPEN) {
-        Socket.close();
-        console.log("WebSocket закрыт при уходе со страницы");
-      }
-    };
-  }
   function sendText(data) {
     console.log(data);
     Socket.send(JSON.stringify(data));

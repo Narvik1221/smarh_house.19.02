@@ -139,6 +139,6 @@ window.onload = function (e) {
   let localIp = localStorage.getItem("ip");
   //console.log(localIp);
   if (!!localIp) {
-    init(localIp);
+    init(window.location.hostname);
   }
 };
