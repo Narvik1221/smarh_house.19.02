@@ -114,7 +114,6 @@ let tempContainer = currentSection.querySelector("#temp-range");
 let humContainer = currentSection.querySelector("#hum-range");
 let Socket;
 function init(ip) {
-  console.log("init(ip)", ip);
   Socket = new WebSocket("ws://" + ip + ":81/");
   Socket.onmessage = function (event) {
     processReceivedCommand(event);

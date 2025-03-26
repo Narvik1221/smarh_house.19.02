@@ -41,7 +41,6 @@ let currentSection = document;
 
 let Socket;
 function init(ip) {
-  console.log("init(ip)", ip);
   Socket = new WebSocket("ws://" + ip + ":81/");
   Socket.onmessage = function (event) {
     processReceivedCommand(event);
