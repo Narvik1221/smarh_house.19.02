@@ -1,3 +1,11 @@
+window.isMouseDown = false;
+document.addEventListener("mousedown", () => {
+  window.isMouseDown = true;
+});
+document.addEventListener("mouseup", () => {
+  window.isMouseDown = false;
+});
+
 let changeArduinoSan = {
   //санузел
   sanSpot: "",
@@ -118,6 +126,11 @@ function init(ip) {
 }
 
 function processReceivedCommand(evt) {
+  if (window.isMouseDown) {
+    console.log("Обновление данных пропущено, мышка зажата");
+    return;
+  }
+
   let myData = JSON.parse(evt.data);
   let name;
   let value;
@@ -296,7 +309,7 @@ function processReceivedCommand(evt) {
       let el = document.getElementById("humidityPr");
       if (el) el.textContent = value;
     } else if (name == "temperaturePr") {
-      //  получаем с сервера градусы для прачки
+      console.log("temperaturePr получен");
       let el = document.getElementById("temperaturePr");
       if (el) el.textContent = value;
     } else {

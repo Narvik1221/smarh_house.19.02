@@ -1,3 +1,11 @@
+window.isMouseDown = false;
+document.addEventListener("mousedown", () => {
+  window.isMouseDown = true;
+});
+document.addEventListener("mouseup", () => {
+  window.isMouseDown = false;
+});
+
 let changeArduinoSan = {
   //названия этих переменных не менять
   //котельная
@@ -60,6 +68,10 @@ function init(ip) {
 }
 
 function processReceivedCommand(evt) {
+  if (window.isMouseDown) {
+    console.log("Обновление данных пропущено, мышка зажата");
+    return;
+  }
   let myData = JSON.parse(evt.data);
   let name;
   let value;
