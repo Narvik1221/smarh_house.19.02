@@ -493,6 +493,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     sliderSan.addEventListener("input", () => fillColor("#sanSliderShim"));
   }
+  let childSan = currentSection.querySelector("#childrenSliderShim");
+  if (childSan) {
+    childSan.addEventListener("change", () => {
+      sendText(changeArduinoSan.childrenSliderShim);
+      range();
+    });
+    childSan.addEventListener("input", () => fillColor("#childrenSliderShim"));
+  }
 });
 //санузел
 function slideOneHum(isSendText = true) {
