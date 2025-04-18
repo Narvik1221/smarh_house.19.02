@@ -39,6 +39,7 @@ let changeArduinoSan = {
   officeBra: "",
   officeRightSpot: "",
   officeLeftSpot: "",
+  officeTrekSpot: "",
   //прачечная
   sanWindLaundry: "",
   checkboxTempHumLaundry: "",
@@ -87,7 +88,7 @@ let arduinoValuesSan = {
   officeBra: "pinout_xxx_officeBra",
   officeRightSpot: "pinout_xxx_officeRightSpot",
   officeLeftSpot: "pinout_xxx_officeLeftSpot",
-
+  officeTrekSpot: "pinout_xxx_officeTrekSpot",
   //прачка
   sanWindLaundry: "param_save_sanWindLaundry_xxx",
   checkboxTempHumLaundry: "param_save_checkboxTempHumLaundry_xxx",
